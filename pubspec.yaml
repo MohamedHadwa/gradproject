@@ -1,0 +1,78 @@
+name: gradproject
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_bottom_navigation_bar: ^0.1.2+2
+  circular_reveal_animation: ^1.1.5
+  flutter_staggered_animations:
+  provider: 
+  shared_preferences:
+  flutter_ringtone_player:
+  firebase_messaging:
+  dio:
+  shimmer:
+  cached_network_image:
+  google_maps_flutter:
+  flutter_spinkit:
+  geolocator: ^5.3.2+2
+  location:
+  image_cropper: 1.2.1
+  image_picker:
+  font_awesome_flutter:
+  animations: ^1.1.2
+  flutter_image_compress: ^0.6.5+1
+  fluttertoast: ^4.0.0
+  toast: ^0.1.5
+  progress_dialog: ^1.2.0
+  awesome_dialog: ^1.1.2
+  app_settings: 3.0.1
+  connectivity: ^0.4.5+1
+  slide_countdown_clock:
+  pin_code_fields:
+  country_code_picker: ^1.1.5
+  flutter_launcher_icons:
+  cupertino_icons: ^1.0.0
+  intl:
+  flutter_html:
+  intro_views_flutter:
+
+dev_dependencies:
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path_android: "assets/icon/newLogo.png"
+  image_path_ios: "assets/icon/newLogo.png"
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/photos/
+    - assets/icon/
+    - assets/langs/ar.json
+    - assets/langs/en.json
+
+  fonts:
+    - family: cairo
+      fonts:
+        - asset: assets/fonts/Tajawal-Regular.ttf
+    - family: caira
+      fonts:
+        - asset: assets/fonts/cairo_regular.ttf
+    - family: Vladimir_Script
+      fonts:
+        - asset: assets/fonts/DancingScript-Regular.ttf
+
