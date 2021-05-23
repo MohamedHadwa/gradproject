@@ -13,7 +13,6 @@ dependencies:
   flutter:
     sdk: flutter
   animated_bottom_navigation_bar: ^0.1.2+2
-  circular_reveal_animation: ^1.1.5
   flutter_staggered_animations:
   provider: 
   shared_preferences:
@@ -22,20 +21,15 @@ dependencies:
   dio:
   shimmer:
   cached_network_image:
-  google_maps_flutter:
   flutter_spinkit:
-  geolocator: ^5.3.2+2
-  location:
   image_cropper: 1.2.1
   image_picker:
   font_awesome_flutter:
   animations: ^1.1.2
   flutter_image_compress: ^0.6.5+1
-  fluttertoast: ^4.0.0
   toast: ^0.1.5
   progress_dialog: ^1.2.0
   awesome_dialog: ^1.1.2
-  app_settings: 3.0.1
   connectivity: ^0.4.5+1
   slide_countdown_clock:
   pin_code_fields:

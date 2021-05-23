@@ -6,7 +6,6 @@ import 'package:gradproject/src/Models/changeData/editAccountModel.dart';
 import 'package:gradproject/src/Repository/appLocalization.dart';
 import 'package:gradproject/src/Repository/networkUtlis.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -61,14 +60,7 @@ class EditUserDataProvider with ChangeNotifier {
       _prefs.setString("name", _model.data.name);
       _prefs.setString("photo", _model.data.photo);
       _prefs.setString("email", _model.data.email);
-      Future.delayed(Duration(seconds: 1), () {
-        customProgressDialog.hidePr();
-        Fluttertoast.showToast(
-            msg: localization.text("edit_success"),
-            toastLength: Toast.LENGTH_LONG,
-            timeInSecForIosWeb: 1,
-            fontSize: 16.0);
-      });
+      
       return true;
     } else {
       print("error  edit_account data");

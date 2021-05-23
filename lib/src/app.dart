@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'Helpers/map_helper.dart';
 import 'Helpers/sharedPref_helper.dart';
 import 'MainScreens/Intro/splash_screen.dart';
 import 'Provider/auth/loginProvider.dart';
@@ -16,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => MapHelper()),
         ChangeNotifierProvider(create: (_) => SharedPref()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => RegisterMobileProvider()),

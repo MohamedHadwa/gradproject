@@ -1,4 +1,3 @@
-import 'package:gradproject/src/Helpers/map_helper.dart';
 import 'package:gradproject/src/MainWidgets/customBtn.dart';
 import 'package:gradproject/src/MainWidgets/custom_alert.dart';
 import 'package:gradproject/src/MainWidgets/register_secure_text_field.dart';
@@ -24,7 +23,6 @@ class _SignUpUsersState extends State<SignUpUsers> {
 
   @override
   void initState() {
-    Provider.of<MapHelper>(context, listen: false).getLocation();
     Provider.of<TermsProvider>(context, listen: false).getTerms();
     _fcm.getToken().then((response) {
       setState(() {
