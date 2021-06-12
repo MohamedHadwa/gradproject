@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:gradproject/src/MainScreens/Intro/splash_screen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
+// import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class FirebaseNotifications {
   FirebaseMessaging _firebaseMessaging;
@@ -11,7 +11,7 @@ class FirebaseNotifications {
 
   void setUpFirebase(GlobalKey<NavigatorState> navigatorKey) {
     this.navigatorKey = navigatorKey;
-    _firebaseMessaging = FirebaseMessaging();
+    _firebaseMessaging = FirebaseMessaging.instance;
     firebaseCloudMessaging_Listeners();
   }
 
@@ -23,34 +23,34 @@ class FirebaseNotifications {
       print("TOOOKEN" + token);
     });
 
-    _firebaseMessaging.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        print('on message ' + message['data'].toString());
-        _onMessageStreamController.add(message);
-        FlutterRingtonePlayer.playNotification(
-          volume: 50,
-          asAlarm: true,
-        );
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print('on resume $message');
-        handlePath(message);
-      },
-      onLaunch: (Map<String, dynamic> message) async {
-        print('on launch $message');
-        handlePath(message);
-      },
-    );
+    // _firebaseMessaging.configure(
+    //   onMessage: (Map<String, dynamic> message) async {
+    //     print('on message ' + message['data'].toString());
+    //     _onMessageStreamController.add(message);
+    //     FlutterRingtonePlayer.playNotification(
+    //       volume: 50,
+    //       asAlarm: true,
+    //     );
+    //   },
+    //   onResume: (Map<String, dynamic> message) async {
+    //     print('on resume $message');
+    //     handlePath(message);
+    //   },
+    //   onLaunch: (Map<String, dynamic> message) async {
+    //     print('on launch $message');
+    //     handlePath(message);
+    //   },
+    // );
   }
 
   // ignore: non_constant_identifier_names
   void iOS_Permission() {
-    _firebaseMessaging.requestNotificationPermissions(
-        IosNotificationSettings(sound: true, badge: true, alert: true));
-    _firebaseMessaging.onIosSettingsRegistered
-        .listen((IosNotificationSettings settings) {
-      print("Settings registered: $settings");
-    });
+    // _firebaseMessaging.requestNotificationPermissions(
+    //     IosNotificationSettings(sound: true, badge: true, alert: true));
+    // _firebaseMessaging.onIosSettingsRegistered
+    //     .listen((IosNotificationSettings settings) {
+    //   print("Settings registered: $settings");
+    // });
   }
 
   void handlePath(Map<String, dynamic> dataMap) {
@@ -58,12 +58,10 @@ class FirebaseNotifications {
   }
 
   void handlePathByRoute(Map<String, dynamic> dataMap) {
-    navigatorKey.currentState
-        .push(MaterialPageRoute(builder: (context) => Splash()));
+    navigatorKey.currentState.push(MaterialPageRoute(builder: (context) => Splash()));
   }
 
-  Future onDidReceiveLocalNotification(
-      int id, String title, String body, String payload) async {
+  Future onDidReceiveLocalNotification(int id, String title, String body, String payload) async {
     if (payload != null) {
       debugPrint('notification payload: ' + payload);
     }
@@ -72,8 +70,7 @@ class FirebaseNotifications {
   // ignore: missing_return
   Future onSelectNotification(String payload) {}
 
-  static StreamController<Map<String, dynamic>> _onMessageStreamController =
-      StreamController.broadcast();
+  static StreamController<Map<String, dynamic>> _onMessageStreamController = StreamController.broadcast();
 
   StreamController<Map<String, dynamic>> get notificationSubject {
     return _onMessageStreamController;

@@ -26,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
     });
   }
 
-  FirebaseMessaging _fcm = FirebaseMessaging();
+  FirebaseMessaging _fcm = FirebaseMessaging.instance;
   String _deviceToken;
   final _form = GlobalKey<FormState>();
   bool autoError = false;
@@ -38,8 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
         resizeToAvoidBottomInset: true,
         body: Form(
           key: _form,
-          autovalidateMode:
-              autoError ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: autoError ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: Stack(
             children: [
               Container(
@@ -78,17 +77,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => ForgetPassword()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => ForgetPassword()));
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(right: 20.0, left: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('Forgot password?',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 10)),
+                            Text('Forgot password?', style: TextStyle(color: Colors.black, fontSize: 10)),
                           ],
                         ),
                       ),
@@ -99,8 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       padding: 0,
                       width: 137,
                       onTap: () {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) => MainPage()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => MainPage()));
                       },
                       color: Color.fromRGBO(137, 120, 83, 1),
                       text: 'LOG IN',

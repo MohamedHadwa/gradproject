@@ -17,7 +17,7 @@ class SignUpUsers extends StatefulWidget {
 
 class _SignUpUsersState extends State<SignUpUsers> {
   bool _accept = false;
-  FirebaseMessaging _fcm = FirebaseMessaging();
+  FirebaseMessaging _fcm = FirebaseMessaging.instance;
   String _deviceToken;
   GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
 

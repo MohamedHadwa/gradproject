@@ -1,4 +1,15 @@
 import 'dart:async';
+import 'package:gradproject/src/MainScreens/activities/activities_screen.dart';
+import 'package:gradproject/src/MainScreens/activities/activities_two.dart';
+import 'package:gradproject/src/MainScreens/ask_me/page.dart';
+import 'package:gradproject/src/MainScreens/call_page/page.dart';
+import 'package:gradproject/src/MainScreens/doctors_list/page.dart';
+import 'package:gradproject/src/MainScreens/edit_account/account_screen.dart';
+import 'package:gradproject/src/MainScreens/edit_profile/edit_prof_screen.dart';
+import 'package:gradproject/src/MainScreens/edit_profile/profile_screen.dart';
+import 'package:gradproject/src/MainScreens/q_a_answer/page.dart';
+import 'package:gradproject/src/MainScreens/search/page.dart';
+import 'package:gradproject/src/MainScreens/settings/page.dart';
 import 'package:gradproject/src/Repository/firebaseNotifications.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +28,27 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   Future<Timer> _loadData() async {
-    return Timer(Duration(seconds: 3), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (c) => IntroPage()));
-    });
+    return Timer(
+      Duration(seconds: 3),
+      () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            // builder: (c) => IntroPage(),
+            // builder: (c) => AskMe(),
+            // builder: (c) => DoctorsListPage(),
+            // builder: (c) => QandAnswer(),
+            // builder: (c) => CallPage(),
+            // builder: (c) => SearchPage(),
+            //builder: (c) => SettingsScreen(),
+            //builder: (context) => ActivitiesScreen(),
+            // builder: (context) => ProfileScreen(),
+            //builder: (context) => AccountScreen(),
+            //builder: (context) => EditProfileScreen(),
+            builder: (context) => ActivitiesTwoScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -45,8 +73,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
           ),
           Center(
             child: Container(
-              margin:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height * .8),
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * .8),
               child: Shimmer.fromColors(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

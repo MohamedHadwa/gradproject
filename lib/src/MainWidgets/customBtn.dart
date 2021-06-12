@@ -12,13 +12,7 @@ class CustomBtn extends StatelessWidget {
   final double fontSize;
 
   const CustomBtn(
-      {Key key,
-      @required this.text,
-      @required this.onTap,
-      @required this.color,
-      this.txtColor,
-      this.heigh,
-      this.padding, this.width, this.fontSize})
+      {Key key, @required this.text, @required this.onTap, @required this.color, this.txtColor, this.heigh, this.padding, this.width, this.fontSize})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -34,7 +28,7 @@ class CustomBtn extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(color: txtColor,fontSize:fontSize  ),
+            style: TextStyle(color: txtColor, fontSize: fontSize),
           ),
         ),
       ),
