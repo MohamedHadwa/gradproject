@@ -1,8 +1,7 @@
 name: gradproject
 description: A new Flutter project.
 
-publish_to: 'none' 
-
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -13,34 +12,33 @@ dependencies:
   flutter:
     sdk: flutter
   animated_bottom_navigation_bar: ^0.1.2+2
-  flutter_staggered_animations:
-  provider: 
-  shared_preferences:
-  flutter_ringtone_player:
-  firebase_messaging:
-  dio:
-  shimmer:
-  cached_network_image:
-  flutter_spinkit:
-  image_cropper: 1.2.1
-  image_picker:
-  font_awesome_flutter:
   animations: ^1.1.2
-  flutter_image_compress: ^0.6.5+1
-  toast: ^0.1.5
-  progress_dialog: ^1.2.0
   awesome_dialog: ^1.1.2
+  cached_network_image: ^3.0.0
   connectivity: ^0.4.5+1
-  slide_countdown_clock:
-  pin_code_fields:
   country_code_picker: ^1.1.5
-  flutter_launcher_icons:
   cupertino_icons: ^1.0.0
-  intl:
-  flutter_html:
-  intro_views_flutter:
-
-dev_dependencies:
+  dio: ^4.0.0
+  firebase_core: ^1.3.0
+  firebase_messaging: ^10.0.2
+  flutter_html: ^2.1.0
+  flutter_image_compress: ^0.6.5+1
+  flutter_launcher_icons: ^0.9.0
+  flutter_ringtone_player: ^3.0.0
+  flutter_spinkit: ^5.0.0
+  flutter_staggered_animations: ^1.0.0
+  font_awesome_flutter: ^9.1.0
+  image_cropper: ^1.4.1
+  image_picker: ^0.8.1+1
+  intl: ^0.17.0
+  intro_views_flutter: ^3.2.0
+  pin_code_fields: ^7.2.0
+  progress_dialog: ^1.2.0
+  provider: ^5.0.0
+  shared_preferences: ^2.0.6
+  shimmer: ^2.0.0
+  slide_countdown_clock: ^1.0.3
+  toast: ^0.1.5
 
 flutter_icons:
   android: "ic_launcher"
@@ -49,7 +47,6 @@ flutter_icons:
   image_path_ios: "assets/icon/newLogo.png"
 
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -69,4 +66,3 @@ flutter:
     - family: Vladimir_Script
       fonts:
         - asset: assets/fonts/DancingScript-Regular.ttf
-

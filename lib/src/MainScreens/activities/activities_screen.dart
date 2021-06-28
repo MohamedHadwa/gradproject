@@ -6,7 +6,6 @@ class ActivitiesScreen extends StatelessWidget {
   ActivitiesScreen() : super();
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -74,46 +73,50 @@ class ActivitiesScreen extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: List<Widget>.generate(
-              5,
-              (index) => Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  start: 20.0,
-                ),
-                child: CircleAvatar(
-                  child: Center(
-                    child: Text('${index + 1}',
-                    style:TextStyle(color: Colors.white),),
+                  5,
+                  (index) => Padding(
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 20.0,
+                    ),
+                    child: CircleAvatar(
+                      child: Center(
+                        child: Text(
+                          '${index + 1}',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      backgroundColor: Colors.green[200],
+                      radius: 15.0,
+                    ),
                   ),
-                  backgroundColor: Colors.green[200],
-                  radius: 15.0,
-                ),
-              ),
-            ).toList()),
+                ).toList()),
             SizedBox(
               height: 15.0,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: List<Widget>.generate(
-              5,
-              (index) => Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  start: 20.0,
-                ),
-                child: CircleAvatar(
-                  child: Center(
-                    child: Center(
-                      child: Text('${index + 6}',
-                      style:TextStyle(color: Colors.white),),
+                  5,
+                  (index) => Padding(
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 20.0,
+                    ),
+                    child: CircleAvatar(
+                      child: Center(
+                        child: Center(
+                          child: Text(
+                            '${index + 6}',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      radius: 15.0,
+                      backgroundColor: Colors.green[200],
                     ),
                   ),
-                  radius: 15.0,
-                  backgroundColor: Colors.green[200],
-                ),
-              ),
-            ).toList()),
+                ).toList()),
           ],
         ),
       ),
